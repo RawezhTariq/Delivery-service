@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Group 20181221-06:39:22">
-            <file>file:/D:/Projects/Delivery-service/Delevery%20Service/src/delevery/service/DeleveryService.java</file>
+            <file>file:/D:/Projects/Delivery-service/src/delevery/service/Shop.java</file>
+            <file>file:/D:/Projects/Delivery-service/src/delevery/service/Item.java</file>
+            <file>file:/D:/Projects/Delivery-service/src/delevery/service/DeleveryService.java</file>
         </group>
     </open-files>
 </project-private>
