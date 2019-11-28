@@ -1,21 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package delevery.service;
 
-/**
- *
- * @author lenovo
- */
 
-enum Category {
-    shoes,clothes,sport,food,cosmetic
-}
 public class Shop {
-    String name;
-    Category category;
-    Item[] Items;
+    static String[] Categories = new String[]{"Shoes","Clothes","Sport","Food","Cosmetic"};
     
+    String name;
+    String category;
+    Item[] items;
+    
+    Shop(String name , String c , Item[] it){
+        this.name = name;
+        category = c;
+        items = it;
+    }
+    Shop(String n , String c){
+        name = n;
+        category = c;
+    }
+    Shop(){}
 }
