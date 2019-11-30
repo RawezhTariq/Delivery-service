@@ -17,16 +17,19 @@ public class DeleveryService {
         String clientName = s.nextLine();
         System.out.println("Enter your phone number:");
         int clientPhone = s.nextInt();
-        s = new Scanner(System.in);
         System.out.println("Enter your location:");
-        String clientLocation = s.nextLine();
+        String clientLocation = s.next();
         
-        System.out.println("Have a nice day "+ clientName);
-        PrintShoppingCategories();          
-        System.out.print("Pick your shopping category: ");
+        System.out.println("_____________________________");
+        System.out.println("**** Have a nice day "+ clientName+" ****");
+        System.out.println("\nShopping Categories:\n");
+        PrintShopCategories();          
+        System.out.print("\nPick your shopping category: ");
       
         int input = -1;
         input = s.nextInt();
+        System.out.println("_____________________________");
+        System.out.println(Shop.Categories[input] + " Shops:\n");
         String category = Shop.Categories[input];
         int inputs = 0;
         for (int i = 0; i < shops.length; i++) {
@@ -35,7 +38,7 @@ public class DeleveryService {
                 inputs ++;
             }
         }
-        System.out.print("Pick a shop: ");
+        System.out.print("\nPick a shop:");
         input = s.nextInt();
         inputs = 0;
         Shop shop = null;
@@ -48,21 +51,31 @@ public class DeleveryService {
                 inputs ++;
             }
         }
-        ShowShopData(shop);
-        System.out.print("Pick an item to buy: ");
+        System.out.println("_____________________________");
+        System.out.println(shop.name + " Items:\n");
+        PrintShopData(shop);
+        System.out.print("\nPick an item to buy: ");
         input = s.nextInt();
-        
+        Item _item = shop.items[input];
+        System.out.print("\nAre you sure you want to add "+ _item.name+" to your shopping list?\n0 no\n1 yes");
+        input = s.nextInt();
+        if(input == 1){
+            AddItemToShoppingList(_item);
+        }
+        s.close();
+    }
+    static void AddItemToShoppingList(Item item){
         
     }
-    static void PrintShoppingCategories(){
+    static void PrintShopCategories(){
         for(int i = 0; i < Shop.Categories.length; i++){
             System.out.println(i + " "+ Shop.Categories[i]);
         }
     }
-    static void ShowShopData (Shop sh){
-        System.out.println("ناوی دوکان :" + sh.name + " بوارەکەی :" + sh.category);
-        for(Item i :sh.items){
-            System.out.println(i.name + " : "+ i.price);
+    static void PrintShopData (Shop sh){
+        //System.out.println("ناوی دوکان :" + sh.name + "\nبوارەکەی :" + sh.category);
+        for(int i = 0 ; i< sh.items.length;i++){
+            System.out.println(i +" "+ sh.items[i].name + "   "+ sh.items[i].price);
         }
     }
     static void CreateTempShops() {
